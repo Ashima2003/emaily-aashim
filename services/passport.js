@@ -18,7 +18,8 @@ passport.deserializeUser((id, done) => {
 passport.use(new GoogleStrategy({
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
-    callbackURL: '/auth/google/callback'
+    callbackURL: '/auth/google/callback',
+    proxy: true //this is used to make the callback URL work with https
 }, (accessToken, refreshToken, profile, done) => {
     //findOne very first id that match the criteria
     User.findOne({googleId: profile.id}).then((existingUser) => {
