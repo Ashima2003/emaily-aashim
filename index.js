@@ -1,11 +1,12 @@
 const express = require('express');
 const  mongoose = require('mongoose');
+const cookieSession = require('cookie-session'); //importing cookie-session
+const passport = require('passport');
 const keys = require('./config/keys'); //importing keys from config folder
 require('./models/User');//we need to require javascript files to make sure they get included
 require('./services/passport'); //not taking anything from it, hence reduced to require statement
+
 mongoose.connect(keys.mongoURI);
-const cookieSession = require('cookie-session'); //importing cookie-session
-const passport = require('passport'); //importing passport
 
 const app = express();
 
