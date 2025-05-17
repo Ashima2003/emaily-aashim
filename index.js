@@ -8,7 +8,7 @@ require('./services/passport'); //not taking anything from it, hence reduced to 
 
 console.log("MONGO_URI:", process.env.MONGO_URI);
 console.log("MONGO_URI-2:", process.env.MONGO_URI.trim());
-mongoose.connect(keys.mongoURI);
+mongoose.connect(keys.mongoURI.trim());
 
 const app = express();
 
