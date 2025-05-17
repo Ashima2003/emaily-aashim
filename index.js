@@ -6,6 +6,7 @@ const keys = require('./config/keys'); //importing keys from config folder
 require('./models/User');//we need to require javascript files to make sure they get included
 require('./services/passport'); //not taking anything from it, hence reduced to require statement
 
+console.log("MONGO_URI:", process.env.MONGO_URI);
 mongoose.connect(keys.mongoURI);
 
 const app = express();
