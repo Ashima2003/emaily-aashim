@@ -7,6 +7,7 @@ require('./models/User');//we need to require javascript files to make sure they
 require('./services/passport'); //not taking anything from it, hence reduced to require statement
 
 console.log("MONGO_URI:", process.env.MONGO_URI);
+console.log("MONGO_URI-2:", process.env.MONGO_URI.trim());
 mongoose.connect(keys.mongoURI);
 
 const app = express();
